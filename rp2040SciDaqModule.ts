@@ -72,6 +72,11 @@ namespace rp2040SciDaqModule {
 
     let recvPkt = { status: 0, cmd: 0, lenL: 0, lenH: 0, buf: [0] };
 
+    /**
+    * Initalize the SCI Acquisition Module, mainly for initializing communication interface
+    * @param addr 7-bit I2C address, eg: "SciDaqModuleAddress.ADDRESS1"
+    */
+
     //% block="initialize the device until successful ID: %address" 
     //% weight=100
     export function begin(addr: SciDaqModuleAddress): void {
@@ -79,6 +84,13 @@ namespace rp2040SciDaqModule {
         init(100000);
 
     }
+
+    /**
+    * Get data values of the attribute named keys from the sensor with a specific sku among sensors connected to the designated port
+    * @param port Port select, and parameter search range, eg: "SciDaqModulePort.PortAll"
+    * @param key Sensor attribute name, eg: "Analog"
+    * @param type to type, eg: "SciDaqModuleReturnDataType.ValueString"
+    */
 
     //% block="get Interface %port %key %type" 
     //% weight=80
@@ -90,11 +102,21 @@ namespace rp2040SciDaqModule {
         }
     }
 
+    /**
+    * Get data values of the attribute named keys from the sensor with a specific sku among sensors connected to the designated port
+    * @param port Port select, and parameter search range, eg: "SciDaqModulePort.PortAll"
+    * @param key Sensor attribute name, eg: "Analog"
+    */
+
     //% block="get Interface %port %key Value(Float)" 
     //% weight=80
     export function getPortValueNumber(port: SciDaqModulePort, key: string): number {
         return parseFloat(getValue(port, key));
     }
+
+    /**
+    * Get time stamp, also the data refresh time of SCI Acquisition Module
+    */
 
     //% block="get the refresh time of the latest data" 
     //% weight=60

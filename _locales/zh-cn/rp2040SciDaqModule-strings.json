@@ -10,7 +10,7 @@
     "rp2040SciDaqModule.SciDaqModulePort.Port1|block": "Port1",
     "rp2040SciDaqModule.SciDaqModulePort.Port2|block": "Port2",
     "rp2040SciDaqModule.SciDaqModulePort.Port3|block": "Port3",
-    "rp2040SciDaqModule.SciDaqModuleReturnDataType.ValueString|block": "单位（String）",
+    "rp2040SciDaqModule.SciDaqModuleReturnDataType.ValueString|block": "数值（String）",
     "rp2040SciDaqModule.SciDaqModuleReturnDataType.UnitString|block": "单位（String）",
     "rp2040SciDaqModule|block": "SCI 采集模块",
     "{id:category}rp2040SciDaqModule": "SCI 采集模块"
