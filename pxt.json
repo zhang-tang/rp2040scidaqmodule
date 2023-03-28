@@ -4,7 +4,9 @@
     "description": "",
     "license": "MIT",
     "dependencies": {
-        "core": "*"
+        "core": "*",
+        "radio": "*",
+        "microphone": "*"
     },
     "files": [
         "main.blocks",
