@@ -1,15 +1,17 @@
 {
     "name": "rp2040SciDaqModule",
     "description": "",
+    "license": "MIT",
     "dependencies": {
-        "core": "*",
-        "microphone": "*"
+        "core": "*"
     },
     "files": [
         "main.blocks",
         "main.ts",
         "README.md",
-        "rp2040SciDaqModule.ts"
+        "rp2040SciDaqModule.ts",
+        "_locales/zh-cn/rp2040SciDaqModule-strings.json",
+        "_locales/zh-cn/rp2040SciDaqModule-jsdoc-strings.json"
     ],
     "testFiles": [
         "test.ts"
