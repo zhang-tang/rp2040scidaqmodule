@@ -72,13 +72,7 @@ namespace rp2040SciDaqModule {
 
     let recvPkt = { status: 0, cmd: 0, lenL: 0, lenH: 0, buf: [0] };
 
-
-    /**
-     * 
-     * @param address to address ,eg: "SciDaqModuleAddress.ADDRESS1"
-     */
-
-    //% block="init while success i2c address %address" 
+    //% block="initialize the device until successful ID: %address" 
     //% weight=100
     export function begin(addr: SciDaqModuleAddress): void {
         address = addr;
@@ -102,7 +96,7 @@ namespace rp2040SciDaqModule {
         return parseFloat(getValue(port, key));
     }
 
-    //% block="get data update time" 
+    //% block="get the refresh time of the latest data" 
     //% weight=60
     export function getTimeStamp(): string {
         let values = "";
@@ -140,6 +134,7 @@ namespace rp2040SciDaqModule {
         recvPkt.lenL = 0;
         recvPkt.lenH = 0;
         recvPkt.buf = [];
+        errorCode = ERR_CODE_NONE;
     }
 
 
@@ -173,7 +168,6 @@ namespace rp2040SciDaqModule {
         let values = "";
         let length = keys.length + 1;
         let sendpkt = [CMD_GET_KEY_UINT1, length & 0xFF, (length >> 8) & 0xFF, inf];
-        // let unicode: number[] = [];
         for (let i = 0; i < keys.length; i++) {
             sendpkt.push(keys.charCodeAt(i));
         }
@@ -208,7 +202,6 @@ namespace rp2040SciDaqModule {
         let data: Buffer;
         let length = 0;
         let t = control.millis();
-
         while (control.millis() - t < timeout) {
             recvPkt.status = recvData(1)[0];
             switch(recvPkt.status){
@@ -230,20 +223,15 @@ namespace rp2040SciDaqModule {
                         for (let i = 0; i < length; i++) {
                             recvPkt.buf.push(data[i]);
                         }
-
                     }
-                    if (errorCode) { errorCode = ERR_CODE_NONE; }
-
                     return;
                 }
-
             }
             basic.pause(50);
         }
         reset(cmd);
-        if (errorCode) { errorCode = ERR_CODE_RES_TIMEOUT; }
+        errorCode = ERR_CODE_RES_TIMEOUT;
         return;
-
     }
 
     function recvData(len: number): Buffer {

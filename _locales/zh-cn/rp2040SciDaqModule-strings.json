@@ -12,6 +12,6 @@
     "rp2040SciDaqModule.SciDaqModulePort.Port3|block": "Port3",
     "rp2040SciDaqModule.SciDaqModuleReturnDataType.ValueString|block": "单位（String）",
     "rp2040SciDaqModule.SciDaqModuleReturnDataType.UnitString|block": "单位（String）",
-    "bosonKit|block": "SCI 采集模块",
-    "{id:category}bosonKit": "SCI 采集模块"
+    "rp2040SciDaqModule|block": "SCI 采集模块",
+    "{id:category}rp2040SciDaqModule": "SCI 采集模块"
 }
