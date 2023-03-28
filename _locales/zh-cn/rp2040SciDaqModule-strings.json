@@ -1,0 +1,17 @@
+{
+    "rp2040SciDaqModule.begin|block": "初始化设备直到成功 ID: %address",
+    "rp2040SciDaqModule.getPortValueString|block": "获取接口 %port %key %type",
+    "rp2040SciDaqModule.getPortValueNumber|block": "获取接口 %port %key 数值（float）",
+    "rp2040SciDaqModule.getTimeStamp|block": "获取最新数据的刷新时间",
+    "rp2040SciDaqModule.SciDaqModuleAddress.ADDRESS1|block": "0x21",
+    "rp2040SciDaqModule.SciDaqModuleAddress.ADDRESS2|block": "0x22",
+    "rp2040SciDaqModule.SciDaqModuleAddress.ADDRESS3|block": "0x23",
+    "rp2040SciDaqModule.SciDaqModulePort.PortAll|block": "全部",
+    "rp2040SciDaqModule.SciDaqModulePort.Port1|block": "Port1",
+    "rp2040SciDaqModule.SciDaqModulePort.Port2|block": "Port2",
+    "rp2040SciDaqModule.SciDaqModulePort.Port3|block": "Port3",
+    "rp2040SciDaqModule.SciDaqModuleReturnDataType.ValueString|block": "单位（String）",
+    "rp2040SciDaqModule.SciDaqModuleReturnDataType.UnitString|block": "单位（String）",
+    "bosonKit|block": "SCI 采集模块",
+    "{id:category}bosonKit": "SCI 采集模块"
+}
